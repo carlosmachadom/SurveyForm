@@ -12,21 +12,21 @@
             <h1>Survey Form</h1>
             <p>Thank you for taking the time to help us improve the platform</p>
         </header>
-        
+
         <main>
-            <section>
-                <form action="">
+            <section class="section-form">
+                <form action="" class="section-form__form">
                     <label for="name"><span>Name</span></label></br>             
-                    <input type="text" name="survey-form" id="name" placeholder="Enter your name" required /></br>
+                    <input type="text" name="survey-form" id="name" class="section-form__form--text" placeholder="Enter your name" required /></br>
 
                     <label for="email"><span>Email</span></label></br>             
-                    <input type="email" name="survey-form" id="email" placeholder="Enter your email" required /></br>
+                    <input type="email" name="survey-form" id="email" class="section-form__form--text" placeholder="Enter your email" required /></br>
 
                     <label for="Age"><span>Age (optional)</span></label></br>                
-                    <input type="text" name="survey-form" id="age" placeholder="Age" /></br>
+                    <input type="text" name="survey-form" id="age" class="section-form__form--text" placeholder="Age" /></br>
 
-                    <label for="current-role"><span>Which option best describes your current role?</span></label> </br>                 
-                    <select name="current-role" id="corrent-role">
+                    <label for="current-role" class="favorite-label"><span>Which option best describes your current role?</span></label> </br>                 
+                    <select name="current-role" id="corrent-role" class="section-form__form--na">
                         <option value="" disabled selected>Select your current role</option>
                         <option value="Student">Student</option>
                         <option value="FullTimeJob">Full time job</option>
@@ -36,13 +36,15 @@
                     </select>
 
                     <fieldset>
-                        <legend>Would you recommend freeCodeCamp to a friend?</legend>                        
-                        <input type="radio" name="recommendation" value="definitely" aria-label="recomendation"/> Definitely
-                        <input type="radio" name="recommendation" value="maybe" aria-label="recomendation" /> Maybe
-                        <input type="radio" name="recommendation" value="notsure" aria-label="recomendation" /> Not sure
+                        <legend>Would you recommend freeCodeCamp to a friend?</legend>  
+                        <ul>
+                            <li><input type="radio" name="recommendation" value="definitely" aria-label="recomendation"/><span>Definitely</span></li>
+                            <li><input type="radio" name="recommendation" value="maybe" aria-label="recomendation" /><span>Maybe</span></li>
+                            <li><input type="radio" name="recommendation" value="notsure" aria-label="recomendation" /><span>Not sure</span></li>
+                        </ul>                                  
                     </fieldset>
 
-                    <label for="feature"><span>What is your favorite feature of freeCodeCamp?</span></label> </br>
+                    <label for="feature" class="favorite-label"><span>What is your favorite feature of freeCodeCamp?</span></label> </br>
                     <select name="feature" id="feature">
                         <option value="" disabled selected>Select an option</option>
                         <option value="challenges">Challenges</option>
@@ -68,8 +70,8 @@
                         </ul>
                     </fieldset>
 
-                    <label for="message-area">Any comments or suggestions?</label>
-                    <textarea name="survey-form" id="message-area" cols="30" rows="10">Enter your comment here</textarea></br>
+                    <label for="message-area">Any comments or suggestions?</label></br>
+                    <textarea name="survey-form" class="section-form__form--text-area" id="message-area" cols="30" rows="10">Enter your comment here</textarea></br>
 
                     <input type="submit" aria-label="submit">
                 </for>
