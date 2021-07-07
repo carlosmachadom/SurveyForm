@@ -4,76 +4,81 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500;600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./styles/style.css" />
         <title>Document</title>
     </head>
     <body>
-        <header>
-            <h1>Survey Form</h1>
-            <p>Thank you for taking the time to help us improve the platform</p>
-        </header>
-
         <main>
+            <section class="header">
+                <h1 id="title">Encuesta de pel&iacute;cula</h1>
+                <p id="description">Ayudanos a saber cual es tu g&eacute;nero cinematigr&aacute;fico favorito!</p>
+            </section>
+
             <section class="section-form">
-                <form action="" class="section-form__form">
-                    <label for="name"><span>Name</span></label></br>             
-                    <input type="text" name="survey-form" id="name" class="section-form__form--text" placeholder="Enter your name" required /></br>
+                <form action="" class="section-form__form" id="survey-form">
+                    <label for="name" id="name-label"><span>Nombre</span></label></br>             
+                    <input type="text" name="survey-form" id="name" class="section-form__form--text" placeholder="Ingresa tu nombre" required /></br>
 
-                    <label for="email"><span>Email</span></label></br>             
-                    <input type="email" name="survey-form" id="email" class="section-form__form--text" placeholder="Enter your email" required /></br>
+                    <label for="email" id="email-label"><span>Email</span></label></br>             
+                    <input type="email" name="survey-form" id="email" pattern=".+@gmail\.com" class="section-form__form--text" placeholder="Ingresa tu email" required /></br>
 
-                    <label for="Age"><span>Age (optional)</span></label></br>                
-                    <input type="text" name="survey-form" id="age" class="section-form__form--text" placeholder="Age" /></br>
+                    <label for="Edad" id="number-label"><span>Edad (opcional)</span></label></br>                
+                    <input type="number" name="survey-form" id="number" class="section-form__form--text" placeholder="Ingresa tu edad" pattern="\d*" min="15" max="95"/></br>
 
-                    <label for="current-role" class="favorite-label"><span>Which option best describes your current role?</span></label> </br>                 
-                    <select name="current-role" id="corrent-role" class="section-form__form--na">
-                        <option value="" disabled selected>Select your current role</option>
-                        <option value="Student">Student</option>
-                        <option value="FullTimeJob">Full time job</option>
-                        <option value="FullTimeLearner">Full time learner</option>
-                        <option value="PreferNotToSay">Prefer not to say</option>
-                        <option value="Other">Other</option>
+                    <label for="dropdown" class="favorite-label"><span>¿Cuál es tu género de peliculas favorito?</span></label> </br>                 
+                    <select name="dropdown" id="dropdown" class="section-form__form--favorite-movie">
+                        <option value="" disabled selected>Selecciona tu g&eacute;nero favorito</option>
+                        <option value="comedy">Com&eacute;dia</option>
+                        <option value="mistery">Misterio</option>
+                        <option value="drama">Drama</option>
+                        <option value="terror">Terror</option>
+                        <option value="horror">Horror</option>
+                        <option value="Animation">Animaci&oacute;n</option>
+                        <option value="other">Otro</option>
                     </select>
 
                     <fieldset>
-                        <legend>Would you recommend freeCodeCamp to a friend?</legend>  
+                        <legend>¿Cuánto te gusta ver pel&iacute;culas o ir a cine?</legend>  
                         <ul>
-                            <li><input type="radio" name="recommendation" value="definitely" aria-label="recomendation"/><span>Definitely</span></li>
-                            <li><input type="radio" name="recommendation" value="maybe" aria-label="recomendation" /><span>Maybe</span></li>
-                            <li><input type="radio" name="recommendation" value="notsure" aria-label="recomendation" /><span>Not sure</span></li>
+                            <li><input type="radio" name="recommendation" value="definitely" aria-label="recomendation"/><span>Una o m&aacute;s veces a la semana</span></li>
+                            <li><input type="radio" name="recommendation" value="maybe" aria-label="recomendation" /><span>Una o m&aacute;s veces al mes</span></li>
+                            <li><input type="radio" name="recommendation" value="notsure" aria-label="recomendation" /><span>No me gusta</span></li>
                         </ul>                                  
                     </fieldset>
 
-                    <label for="feature" class="favorite-label"><span>What is your favorite feature of freeCodeCamp?</span></label> </br>
-                    <select name="feature" id="feature">
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="challenges">Challenges</option>
-                        <option value="projects">Projects</option>
-                        <option value="community">Community</option>
-                        <option value="open-source">Open source</option>
+                    <label for="dropdown" class="favorite-label"><span>Prefieres ver películas en:</span></label> </br>
+                    <select name="dropdown" id="dropdown">
+                        <option value="" disabled selected>Selecciona una opci&oacute;n</option>
+                        <option value="challenges">Cine</option>
+                        <option value="projects">VHS</option>
+                        <option value="community">DVD</option>
+                        <option value="open-source">Internet</option>
                     </select>
 
                     <fieldset>
-                        <legend>What would you like to see improved? (Check all that apply)</legend>
+                        <legend>¿Cuáles son las páginas de internet favoritas para ver peliculas?</legend>
                         <ul>
-                            <li><input type="checkbox" name="chooseArea" value="front-end-projects"/> Front-end Projects</li>
-                            <li><input type="checkbox" name="chooseArea" value="back-end-projects" /> Back-end Projects</li>
-                            <li><input type="checkbox" name="chooseArea" value="data-visualization" /> Data Visualization</li>
-                            <li><input type="checkbox" name="chooseArea" value="challenges" /> Challenges</li>
-                            <li><input type="checkbox" name="chooseArea" value="open-source-community" /> Open Source Community</li>
-                            <li><input type="checkbox" name="chooseArea" value="gitter-help-rooms" /> Gitter help rooms</li>
-                            <li><input type="checkbox" name="chooseArea" value="videos" /> Videos</li>
-                            <li><input type="checkbox" name="chooseArea" value="city-meetups" /> City Meetups</li>
-                            <li><input type="checkbox" name="chooseArea" value="wiki" /> Wiki</li>
-                            <li><input type="checkbox" name="chooseArea" value="forum" /> Forum</li>
-                            <li><input type="checkbox" name="chooseArea" value="additional-courses" /> Additional Courses</li>
+                            <li><input type="checkbox" name="chooseArea" value="front-end-projects"/><span><a href="#">Netflix</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="back-end-projects" /><span><a href="#">Hulu TV</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="data-visualization" /><span><a href="#">HBO</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="challenges" /><span><a href="#">Dispney +</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="open-source-community" /><span><a href="#">Cuevana</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="gitter-help-rooms" /><span><a href="#">Pelis Plus</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="videos" /><span><a href="#">Popcorn time</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="city-meetups" /><span><a href="#">Pelispedia</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="wiki" /><span><a href="#">My flixer</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="forum" /><span><a href="#">Amazon Prime</a></span></li>
+                            <li><input type="checkbox" name="chooseArea" value="additional-courses" /><a href="#">TNT</a></li>
                         </ul>
                     </fieldset>
 
-                    <label for="message-area">Any comments or suggestions?</label></br>
-                    <textarea name="survey-form" class="section-form__form--text-area" id="message-area" cols="30" rows="10">Enter your comment here</textarea></br>
+                    <label for="message-area">Algún comentario?</label></br>
+                    <textarea name="survey-form" class="section-form__form--text-area" id="message-area" cols="30" rows="10">Ingresa tu comentario aquí!</textarea></br>
 
-                    <input type="submit" aria-label="submit">
+                    <input type="submit" id="submit" aria-label="submit">
                 </for>
             </section>
         </main>
